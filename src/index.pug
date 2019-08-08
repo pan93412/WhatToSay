@@ -1,11 +1,8 @@
 //
-  寫這份網頁的時候正好時逢父親節而
-  做了這份網頁。恭喜您發現這個彩蛋！
-
-  -- pan93412, 2019/08/08
+  @author pan93412, 2019/08/08
 
 doctype html
-html(lang='zh_TW')
+html(lang='zh-TW')
 
 head
   title / 父親節快樂！ /
@@ -13,10 +10,6 @@ head
   script(src='assets/mainCSS.bundle.js')
 
 body
-  article.message.is-warning#phoneUserWarning
-    .message-body
-      p 使用電腦瀏覽以獲得更好體驗，且建議使用 
-        | Chrome 及 Firefox 最新版瀏覽。
   .container.center
     .card.shadow(style='max-width: 30rem;')
       .card-image
@@ -31,5 +24,6 @@ body
         hr
         p 寫完之後，直接複製網址並傳給你想給的人即可。
         textarea.textarea#toSay(placeholder='你想告訴父親什麼呢？支援 HTML 標籤。')
+        p 作者：pan93412，#[a(href='https://github.com/pan93412/FatherDay') 此專案檔案庫]
 
 script(src='assets/main.bundle.js')
