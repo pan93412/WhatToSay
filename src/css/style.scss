@@ -1,0 +1,97 @@
+.mainContainer {
+  margin-top: 3em;
+  padding-left: 2em;
+}
+
+.phoneUserWarning {
+  display: block;
+}
+
+@media (min-width: 576px) {
+  .section-line {
+    background-color: rgb(211,211,211);
+    width: 1.2rem;
+    height: 8rem;
+    margin-left: 1px;
+  }
+
+  // 如果使用者螢幕 width > 576px 則不顯示警告。
+  #phoneUserWarning {
+    display: none;
+  }
+}
+
+table, tr, td, th {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+@keyframes blurAnimation {
+  from {
+    filter: blur(0px);
+  }
+
+  50% {
+    filter: blur(5px);
+  }
+
+  to {
+    filter: blur(10px);
+  }
+}
+
+@keyframes reverseBlurAnimation {
+  from {
+    filter: blur(10px);
+  }
+
+  50% {
+    filter: blur(5px);
+  }
+
+  to {
+    filter: blur(0px);
+  }
+}
+
+.personalLogo {
+  opacity: 0.7;
+  border-radius: 100%;
+  box-shadow: 5px 8px 6px 4px;
+  animation-name: reverseBlurAnimation;
+  animation-duration: 2s;
+}
+
+.personalLogo:hover {
+  animation-name: blurAnimation;
+  animation-duration: 2s;
+}
+
+.footer {
+  text-align: center;
+}
+
+blockquote {
+  color: gray;
+  font-style: italic;
+}
+
+.card {
+  margin: 1.2em;
+}
+
+.introduction {
+  text-transform: uppercase;
+}
+
+.center {
+  height: 30em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shadow {
+  border-radius: 4px;
+  box-shadow: 7px 10px 7px 2px;
+}

@@ -1,0 +1,35 @@
+//
+  寫這份網頁的時候正好時逢父親節而
+  做了這份網頁。恭喜您發現這個彩蛋！
+
+  -- pan93412, 2019/08/08
+
+doctype html
+html(lang='zh_TW')
+
+head
+  title / 父親節快樂！ /
+  meta(charset='UTF-8')
+  script(src='assets/mainCSS.bundle.js')
+
+body
+  article.message.is-warning#phoneUserWarning
+    .message-body
+      p 使用電腦瀏覽以獲得更好體驗，且建議使用 
+        | Chrome 及 Firefox 最新版瀏覽。
+  .container.center
+    .card.shadow(style='max-width: 30rem;')
+      .card-image
+        figure.image
+          img#fatherImg(alt='父親節快樂！！' width=284 height=188)
+      .card-content
+        .titleSection
+          p.title.is-4 父親節快樂！
+          subtitle.is-6.emoji ㊗️ 👨‍💼 父親節 😄 啊！
+        .content
+          p#theText 先啟用 JavaScript 再來使用此網頁！
+        hr
+        p 寫完之後，直接複製網址並傳給你想給的人即可。
+        textarea.textarea#toSay(placeholder='你想告訴父親什麼呢？支援 HTML 標籤。')
+
+script(src='assets/main.bundle.js')
