@@ -1,6 +1,6 @@
 {
-  "name": "FatherDay",
-  "version": "1.0.0",
+  "name": "what_do_you_actually_want_to_say",
+  "version": "1.1.1",
   "description": "練習用專案（？",
   "main": "index.js",
   "license": "MIT",
@@ -12,9 +12,8 @@
   "dependencies": {
     "bulma": "^0.7.5",
     "css-loader": "^3.2.0",
-    "eslint": "^6.1.0",
     "file-loader": "^4.1.0",
-    "js-base64": "^2.5.1",
+    "lzutf8": "^0.5.5",
     "node-sass": "^4.12.0",
     "pug": "^2.0.4",
     "pug-cli": "^1.0.0-alpha6",

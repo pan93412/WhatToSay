@@ -1,29 +1,28 @@
 //
-  @author pan93412, 2019/08/08
+  @author pan93412, 2019/08/09
+  修改自 FatherDay 版本庫。
 
 doctype html
 html(lang='zh-TW')
 
 head
-  title / 父親節快樂！ /
+  title 今天你要＊＊誰呢？
   meta(charset='UTF-8')
   script(src='assets/mainCSS.bundle.js')
 
 body
   .container.center
     .card.shadow(style='max-width: 30rem;')
-      .card-image
-        figure.image
-          img#fatherImg(alt='父親節快樂！！' width=284 height=188)
       .card-content
         .titleSection
-          p.title.is-4 父親節快樂！
-          subtitle.is-6.emoji ㊗️ 👨‍💼 父親節 😄 啊！
+          p.title.is-4 今天你要＊＊誰呢？
+          subtitle.is-6.emoji 無論是告白、要錢或者是亂打，都輸出來吧！！！
         .content
-          p#theText 先啟用 JavaScript 再來使用此網頁！
+          blockquote#theText 先啟用 JavaScript 再來使用此網頁！
         hr
         p 寫完之後，直接複製網址並傳給你想給的人即可。
-        textarea.textarea#toSay(placeholder='你想告訴父親什麼呢？支援 HTML 標籤。')
-        p 作者：pan93412，#[a(href='https://github.com/pan93412/FatherDay') 此專案檔案庫]
+        textarea.textarea#toSay(placeholder='今天你要＊＊誰呢？連續按三次驚嘆號換行。')
+        p 此站作者不對內容擔保，所有內容皆儲存於連結之中，並未儲存於伺服器內。所有
+          | 因文字所生的爭議本人不會負責。#[a(href='https://github.com/pan93412/FatherDay') 此專案檔案庫]。
 
 script(src='assets/main.bundle.js')
