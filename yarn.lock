@@ -18,11 +18,6 @@
     esutils "^2.0.2"
     js-tokens "^4.0.0"
 
-"@fortawesome/fontawesome-free@^5.10.1":
-  version "5.10.1"
-  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free/-/fontawesome-free-5.10.1.tgz#dec28ee02c3fc51da46d53ce4da9d5787312fbd7"
-  integrity sha512-PYncBhgN1l02mwHmczukexmu4yRTjRDAAdcK62jdWSAW8epcnZ9K2win/7rMrffiv/c7XLVDA8vD+yi6WyvbGQ==
-
 "@types/babel-types@*", "@types/babel-types@^7.0.0":
   version "7.0.7"
   resolved "https://registry.yarnpkg.com/@types/babel-types/-/babel-types-7.0.7.tgz#667eb1640e8039436028055737d2b9986ee336e3"
@@ -1014,6 +1009,11 @@ crypto-browserify@^3.11.0:
     public-encrypt "^4.0.0"
     randombytes "^2.0.0"
     randomfill "^1.0.3"
+
+crypto-js@^3.1.9-1:
+  version "3.1.9-1"
+  resolved "https://registry.yarnpkg.com/crypto-js/-/crypto-js-3.1.9-1.tgz#fda19e761fc077e01ffbfdc6e9fdfc59e8806cd8"
+  integrity sha1-/aGedh/Ad+Af+/3G6f38WeiAbNg=
 
 css-loader@^3.2.0:
   version "3.2.0"
@@ -2464,6 +2464,11 @@ lru-cache@^5.1.1:
   integrity sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==
   dependencies:
     yallist "^3.0.2"
+
+lzutf8@^0.5.5:
+  version "0.5.5"
+  resolved "https://registry.yarnpkg.com/lzutf8/-/lzutf8-0.5.5.tgz#3f677ef865eae628fca5f8c6a423ae631371a71c"
+  integrity sha512-x4AdRtP0ETRe0BW8V+TfW+8rOF5t3vWU/Z52twUqDRf0OiEuXiLvXNN6Zm8biFCTI9ffXBZb++THAjfkJ559Nw==
 
 make-dir@^2.0.0:
   version "2.1.0"
