@@ -26,51 +26,6 @@ table, tr, td, th {
   border-collapse: collapse;
 }
 
-@keyframes blurAnimation {
-  from {
-    filter: blur(0px);
-  }
-
-  50% {
-    filter: blur(5px);
-  }
-
-  to {
-    filter: blur(10px);
-  }
-}
-
-@keyframes reverseBlurAnimation {
-  from {
-    filter: blur(10px);
-  }
-
-  50% {
-    filter: blur(5px);
-  }
-
-  to {
-    filter: blur(0px);
-  }
-}
-
-.personalLogo {
-  opacity: 0.7;
-  border-radius: 100%;
-  box-shadow: 5px 8px 6px 4px;
-  animation-name: reverseBlurAnimation;
-  animation-duration: 2s;
-}
-
-.personalLogo:hover {
-  animation-name: blurAnimation;
-  animation-duration: 2s;
-}
-
-.footer {
-  text-align: center;
-}
-
 blockquote {
   color: gray;
   font-style: italic;
@@ -80,12 +35,7 @@ blockquote {
   margin: 1.2em;
 }
 
-.introduction {
-  text-transform: uppercase;
-}
-
 .center {
-  height: 30em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -94,4 +44,8 @@ blockquote {
 .shadow {
   border-radius: 4px;
   box-shadow: 7px 10px 7px 2px;
+}
+
+#theText {
+  overflow: auto;
 }

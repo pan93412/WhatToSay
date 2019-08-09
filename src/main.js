@@ -1,16 +1,9 @@
-// 載入個人 logo XD
-const logo = require('./img/father.jpg')
-
-// base64 函數
-const base64 = require('js-base64').Base64
-
-// 圖示主題：Font Awesome
-require('@fortawesome/fontawesome-free/js/all.min.js')
+// 壓縮文字用
+const lzutf8 = require('lzutf8')
 
 // 目前網址
 const currentURL = new URL(location.href)
 const toSay = currentURL.searchParams.get('toSay')
-const userInput = base64.decode(toSay ? toSay : '54i26Kaq56+A5b+r5qiC77yB')
 const currentPathname = currentURL.pathname
 
 // 類 $() 函式
@@ -21,22 +14,58 @@ function $$(ele) {
   return document.querySelectorAll(ele)
 }
 
-// 主函式
-function main() {
-  // 設定個人 logo
-  const personalLogo = $$('#fatherImg')
-  personalLogo.setAttribute('src', 'assets/' + logo)
+// 解決 textarea 所產生的 XSS 漏洞。
+function escapeHtml(text) {
+  var map = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#039;',
+    "!!!": "<br>"
+  };
 
-  // 設定主要顯示區塊
-  const theText = $$('#theText')
-  const toSay = $$('#toSay')
+  return text.replace(/([&<>"']|!!!)/g, function(m) { return map[m]; });
+}
 
-  theText.innerHTML = userInput
-
-  toSay.addEventListener('keyup', () => {
-    history.replaceState({text: toSay.value}, '', currentPathname + '?toSay=' + base64.encodeURI(toSay.value))
-    theText.innerHTML = toSay.value
+/* COMPRESSION and DECOMPRESSION */
+// 壓縮
+function comp(originalTxt) {
+  return new Promise((resolve) => {
+    lzutf8.compressAsync(originalTxt, {outputEncoding: 'Base64'}, (res) => {
+      resolve(res)
+    })
   })
 }
 
-main() // 執行！
+// 解壓縮
+function decomp(originalTxt) {
+  return new Promise((resolve) => {
+    lzutf8.decompressAsync(originalTxt, {inputEncoding: 'Base64'}, (res) => {
+      resolve(res)
+    })
+  })
+}
+
+// 處理連結
+async function linkHandler() {
+  const toSayElement = $$('#toSay')
+  const theText = $$('#theText')
+
+  const usrInput = escapeHtml(toSayElement.value)
+  const output = await comp(usrInput)
+
+  history.replaceState({}, '', `${currentPathname}?toSay=${output}`)
+  theText.innerHTML = usrInput
+}
+
+(async function () {
+  const userInput = toSay ? await decomp(toSay) : 'Nothing here... 寫些什麼吧？'
+
+  // 主要顯示區塊
+  const theText = $$('#theText')
+  const toSayElement = $$('#toSay')
+
+  theText.innerHTML = userInput
+  toSayElement.addEventListener('keyup', linkHandler)
+})()
