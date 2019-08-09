@@ -6,6 +6,12 @@ const currentURL = new URL(location.href)
 const toSay = currentURL.searchParams.get('toSay')
 const currentPathname = currentURL.pathname
 
+const introTxt = '剛才有個人問我「這世界上最棒的＊＊平台是什麼」，我毫不思索的回答了\
+「<span style="color: red"><b>今天你要＊＊誰呢？</b></span>」，而後，\
+我就被拖到後門痛毆了……<br>以上故事都是唬爛，\
+但是這東西保證安全，內容<b>不會被除了你和被分享者以外的人看見</b>，\
+還不趕快用這東西去＊＊？！XD'
+
 // 類 $() 函式
 function $$(ele) {
   if (ele.match(/^#/)) {
@@ -56,11 +62,11 @@ async function linkHandler() {
   const output = await comp(usrInput)
 
   history.replaceState({}, '', `${currentPathname}?toSay=${output}`)
-  theText.innerHTML = usrInput
+  theText.innerHTML = usrInput !== "" ? usrInput : introTxt
 }
 
 (async function () {
-  const userInput = toSay ? await decomp(toSay) : 'Nothing here... 寫些什麼吧？'
+  const userInput = toSay ? await decomp(toSay) : introTxt
 
   // 主要顯示區塊
   const theText = $$('#theText')
