@@ -61,12 +61,12 @@ async function linkHandler() {
   const usrInput = escapeHtml(toSayElement.value)
   const output = await comp(usrInput)
 
-  history.replaceState({}, '', `${currentPathname}?toSay=${output}`)
+  history.replaceState({}, '', `${currentPathname}?toSay=${encodeURIComponent(output)}`)
   theText.innerHTML = usrInput !== "" ? usrInput : introTxt
 }
 
 (async function () {
-  const userInput = toSay ? await decomp(toSay) : introTxt
+  const userInput = toSay ? await decomp(decodeURIComponent(toSay)) : introTxt
 
   // 主要顯示區塊
   const theText = $$('#theText')
